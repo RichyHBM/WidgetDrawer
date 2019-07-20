@@ -27,6 +27,7 @@ class PrefsManager private constructor(private val context: Context) {
         const val CURRENT_SHORTCUT_IDS = "shortcut_ids"
         const val SHOW_HANDLE = "show_handle"
         const val CLOSE_ON_EMPTY_TAP = "close_on_empty_tap"
+        const val DISABLE_SERVICE_WITH_DRAWER_CLOSE = "disable_service_with_drawer_close"
 
         @SuppressLint("RtlHardcoded")
         const val HANDLE_LEFT = Gravity.LEFT
@@ -124,6 +125,12 @@ class PrefsManager private constructor(private val context: Context) {
         set(value) {
             putBoolean(CLOSE_ON_EMPTY_TAP, value)
         }
+    var disableServiceWithDrawerClose: Boolean
+        get() = getBoolean(DISABLE_SERVICE_WITH_DRAWER_CLOSE, false)
+        set(value) {
+            putBoolean(DISABLE_SERVICE_WITH_DRAWER_CLOSE, value)
+        }
+
 
 
     fun getString(key: String, def: String?) = prefs.getString(key, def)

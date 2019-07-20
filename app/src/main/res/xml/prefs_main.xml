@@ -20,6 +20,12 @@
         android:dependency="enabled"
         />
 
+    <androidx.preference.SwitchPreference
+        android:title="@string/disable_service_with_drawer_close"
+        android:key="disable_service_with_drawer_close"
+        android:defaultValue="false"
+        />
+
     <androidx.preference.SwitchPreferenceCompat
         android:title="@string/show_handle"
         android:key="show_handle"

@@ -89,6 +89,11 @@ class DrawerService : Service(), SharedPreferences.OnSharedPreferenceChangeListe
 
                 ACTION_CLOSE_DRAWER -> {
                     drawer.hideDrawer()
+                    if(context != null) {
+                        val prefs = PrefsManager.getInstance(context)
+                        if(prefs.disableServiceWithDrawerClose)
+                            DrawerService.stop(context)
+                    }
                 }
             }
         }
